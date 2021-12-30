@@ -21,3 +21,8 @@ const start = async () => {
 }
 
 start();
+
+process.on('unhandledRejection', (err, promise) => {
+  console.log(`Error: ${err.message}`);
+  process.exit(1);
+});
